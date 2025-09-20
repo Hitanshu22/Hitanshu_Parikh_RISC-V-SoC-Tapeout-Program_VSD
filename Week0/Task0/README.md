@@ -36,8 +36,8 @@ $ make config-gcc
 $ git submodule update --init --recursive
 $ make 
 $ sudo make install
-
-```Week0/Task0/Output/yosys.jpg
+```
+![Alt Text](Images/yosys_installation_done.jpeg)
 
 #### <ins>**Iverilog**</ins>
 ```bash
