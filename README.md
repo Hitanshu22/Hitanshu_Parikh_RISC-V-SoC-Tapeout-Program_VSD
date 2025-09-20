@@ -22,7 +22,7 @@ In this program, we learn to design a System-on-Chip (SoC) from basic RTL to GDS
 ### Key Learnings from Week 0
 - Installed and verified **open-source EDA tools** successfully.  
 - Learned about **basic environment setup** for RTL design and synthesis.  
-- Prepared the system for upcoming **RTL → GDSII flow experiments**.
+- Prepared the system for upcoming **RTL → GDSII flow task**.
 
 
 
