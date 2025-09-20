@@ -5,10 +5,9 @@
 </div>
 
 
-Welcome to my journey through the **SoC Tapeout Program VSD**!  
 This repository documents my **week-by-week progress** with tasks inside each week.  
 
-"In this program, we learn to design a System-on-Chip (SoC) from basic RTL to GDSII using open-source tools. Part of India’s largest collaborative RISC-V tapeout initiative, empowering participants to build silicon and advance the nation’s semiconductor ecosystem
+In this program, we learn to design a System-on-Chip (SoC) from basic RTL to GDSII using open-source tools. Part of India’s largest collaborative RISC-V tapeout initiative, empowering participants to build silicon and advance the nation’s semiconductor ecosystem.
 
 ---
 
@@ -26,11 +25,6 @@ This repository documents my **week-by-week progress** with tasks inside each we
 - Prepared the system for upcoming **RTL → GDSII flow experiments**.
 
 
-## 📈 **Weekly Progress Tracker**
-
-[![Week0](https://img.shields.io/badge/Week%200-Tools%20Setup-success?style=flat-square)](Week0)
-![Week 1](https://img.shields.io/badge/Week%201-Coming%20Soon-lightgrey?style=flat-square)
-![Week 2](https://img.shields.io/badge/Week%202-Upcoming-lightgrey?style=flat-square)
 
 
 
