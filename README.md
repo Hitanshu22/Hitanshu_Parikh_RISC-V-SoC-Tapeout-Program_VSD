@@ -15,7 +15,7 @@ In this program, we learn to design a System-on-Chip (SoC) from basic RTL to GDS
 
 | Task | Description | Status |
 |------|-------------|---------|
-| [**Task 0**](Week0/Task0/README.md) | 🛠️ [Tools Installation](Week0/Task0/README.md) — Installed **Iverilog**, **Yosys**, and **gtkWave** | ✅ Done |
+| [**Task 0**](Week0/Task0/README.md) | 🛠️ [Tools Installation](Week0/Task0/README.md) — Installed **Yosys**, **Iverilog**, and **gtkWave** | ✅ Done |
 
 
 
