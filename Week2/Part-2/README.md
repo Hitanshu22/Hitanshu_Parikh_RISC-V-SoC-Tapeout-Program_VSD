@@ -77,7 +77,7 @@ vvp baby_soc_tb.vvp
 Simulation Output
 Trace file generated: baby_soc.vcd
 
-5. Final Remarks
+## 5. Final Remarks
 Observations
 Reset ensures all subsystems initialize safely with zeroed outputs.
 
@@ -85,5 +85,5 @@ Clock synchronizes operations, driving predictable increments in CPU behavior.
 
 Data traverses the CPU → Memory → Peripheral path accurately, demonstrating functional correctness.
 
-Conclusion
+## Conclusion
 This modelling activity provides strong evidence of reliable BabySoC operation. Reset, clock synchronization, and dataflow are verified through waveform analysis, highlighting fundamental SoC design concepts. The exercise reinforces confidence in reading simulation traces and builds the foundation for further RTL design and verification tasks.
