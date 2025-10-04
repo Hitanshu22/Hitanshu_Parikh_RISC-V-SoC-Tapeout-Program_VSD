@@ -1,128 +1,123 @@
-# 🚀 Week 2 – BabySoC Basics & Functional Modelling  
-
-### 📘 **Part 1: Conceptual Learning**  
-
----
-
-## 📑 Contents  
-1. [🔎 What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)  
-2. [🧩 Major Building Blocks of an SoC](#2-major-building-blocks-of-an-soc)  
-3. [🎓 Why BabySoC? A Learning-Friendly Model](#3-why-babysoc-a-learning-friendly-model)  
-4. [⚙️ Functional Modelling in Design Flow](#4-functional-modelling-in-design-flow)  
-5. [📝 Key Takeaways](#5-key-takeaways)  
-6. [📂 Deliverable](#deliverable)  
-7. [🔗 References](#references)  
+# Week 2 – BabySoC Basics & Functional Modelling  
+### Part 1: Conceptual Learning  
 
 ---
 
-## 1. 🔎 What is a System-on-Chip (SoC)?  
-
-A **System-on-Chip (SoC)** is a **single silicon chip** that integrates:  
-- 🖥️ **Processor core**  
-- 🗄️ **Memory modules**  
-- 🔌 **I/O interfaces & peripherals**  
-- ⚡ **Control & communication subsystems**  
-
-Unlike conventional systems spread across multiple chips, an SoC delivers:  
-✅ Compact design  
-✅ Higher performance  
-✅ Lower power usage  
-✅ Faster interconnects  
-
-SoCs power everyday tech: **smartphones, IoT devices, automotive ECUs, and edge processors.**
+## Table of Contents
+1. [What is a System-on-Chip (SoC)?](#1-what-is-a-system-on-chip-soc)  
+2. [Major Building Blocks of an SoC](#2-major-building-blocks-of-an-soc)  
+3. [Why BabySoC? A Learning-Friendly Model](#3-why-babysoc-a-learning-friendly-model)  
+4. [Functional Modelling in the Design Flow](#4-functional-modelling-in-the-design-flow)  
+5. [Key Takeaways](#5-key-takeaways)  
+6. [Deliverable](#6-deliverable)  
+7. [References](#7-references)  
 
 ---
 
-## 2. 🧩 Major Building Blocks of an SoC  
+## 1. What is a System-on-Chip (SoC)?  
 
-Think of an SoC as a **mini-city on silicon**, where each block has a role:
+A **System-on-Chip (SoC)** is an integrated circuit that places processor cores, memory, I/O interfaces, and control subsystems onto a **single silicon die**.  
 
-### 🧠 Processor / CPU Core  
-- Acts as the **central brain**.  
-- Executes instructions and manages control.  
-- Architectures: **RISC-V**, **ARM**, **MIPS**.  
-- Contains ALU + Control Unit + Registers.  
+Unlike traditional boards with separate chips, an SoC achieves:  
+- Compact form factor  
+- Reduced power consumption  
+- Higher performance  
+- Lower communication delay  
 
-### 💾 Memory Subsystem  
-- Stores **instructions** and **data**.  
-- **Volatile (SRAM/DRAM):** temporary, runtime use.  
-- **Non-volatile (ROM/Flash):** permanent storage for boot + firmware.  
-
-### 🔗 Interconnect / Bus  
-- The **highway system** of the chip.  
-- Links CPU ↔ Memory ↔ Peripherals.  
-- Standards: **AMBA (AHB/APB)**, **Wishbone**.  
-- Handles arbitration & bandwidth distribution.  
-
-### 📡 Peripherals  
-- Interfaces with the outside world.  
-- Examples: **UART, SPI, I²C, GPIO, ADC/DAC, Timers**.  
-
-### ⏱️ Clock & Reset  
-- **Clock:** defines the rhythm for synchronous operation.  
-- **Reset:** ensures safe startup state.  
+SoCs are present in **smartphones, IoT modules, routers, and automotive systems**. They represent the convergence of **hardware, firmware, and communication systems** into one device.  
 
 ---
 
-## 3. 🎓 Why BabySoC? A Learning-Friendly Model  
+## 2. Major Building Blocks of an SoC  
 
-The **BabySoC** is a **scaled-down SoC** for education, not complexity.  
+A typical SoC integrates the following components:  
 
-✨ Benefits:  
-- Visualizes **CPU ↔ Memory ↔ Peripheral interaction**.  
-- Strips away multi-core/pipeline overhead.  
-- Simple enough to simulate with **Icarus Verilog + GTKWave**.  
-- Great for experimenting with **clocks, resets, and bus communication**.  
+### Processor / CPU Core  
+- The control center of the chip.  
+- Executes instructions and manages control signals.  
+- Popular architectures include **RISC-V**, **ARM**, and **MIPS**.  
+- Contains ALU, control unit, and registers.  
 
-👉 It’s the **training wheels** for mastering real-world SoCs.  
+### Memory Subsystem  
+- Stores both data and instructions.  
+- **Volatile memory (SRAM/DRAM):** runtime use.  
+- **Non-volatile memory (ROM/Flash):** permanent storage for firmware.  
 
----
+### Peripherals  
+- Provide interfaces for external communication.  
+- Examples: **UART, SPI, I²C, Timers, GPIOs, ADC/DAC**.  
 
-## 4. ⚙️ Functional Modelling in Design Flow  
+### Interconnect / Bus  
+- Communication backbone between CPU, memory, and peripherals.  
+- Standards include **AMBA (AHB/APB)** and **Wishbone**.  
+- Manages data transfer, arbitration, and timing.  
 
-**Functional Modelling** = the step before RTL implementation & physical design.  
-It ensures the design behaves logically **before heavy synthesis.**  
-
-### 🎯 Why it matters:  
-- ✅ Early bug detection in architecture  
-- ✅ Logical validation of block behavior  
-- ✅ Clock + Reset + Dataflow waveform checks  
-- ✅ Builds confidence for downstream RTL/PD stages  
-
-### 🛠️ Tools & Workflow  
-1. **Icarus Verilog (iverilog):** compile + simulate  
-2. **GTKWave:** view waveforms (`.vcd` dumps)  
-3. Inspect signal activity → reset, clock ticks, CPU-memory transactions  
+### Clock and Reset Circuits  
+- **Clock:** provides synchronous timing reference.  
+- **Reset:** initializes modules into a known safe state.  
 
 ---
 
-## 5. 📝 Key Takeaways  
+## 3. Why BabySoC? A Learning-Friendly Model  
 
-- A System-on-Chip = **CPU + Memory + Peripherals + Bus + Clock/Reset** on one chip.  
-- BabySoC = **simplified playground** to understand how modules talk.  
-- Functional modelling = **bridge from concept → RTL**.  
-- Tools: **iverilog + gtkwave** = 💯 open-source simulation toolkit.  
+The **BabySoC** is a scaled-down representation of a real SoC, used primarily for educational purposes.  
 
----
+Advantages:  
+- Demonstrates CPU–memory–peripheral communication.  
+- Avoids the complexity of multi-core or deep pipelines.  
+- Simplicity allows use of open-source tools such as **Icarus Verilog** and **GTKWave**.  
+- Useful for studying reset, clock, and dataflow behavior.  
 
-## 📂 Deliverable  
-
-📌 Markdown write-up must include:  
-- ✅ SoC fundamentals explanation  
-- ✅ Block-wise description  
-- ✅ Why BabySoC is chosen  
-- ✅ Role of functional modelling in design cycle  
+This makes BabySoC a **practical entry point** for SoC learning.  
 
 ---
 
-## 🔗 References  
+## 4. Functional Modelling in the Design Flow  
 
-1. Hemanth Kumar D M – *SFAL-VSD SoC Journey: Fundamentals of SoC Design*  
-   🔗 [GitHub Link](https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/11.%20Fundamentals%20of%20SoC%20Design)  
+**Functional Modelling** validates the **logical behavior** of an SoC before RTL or physical design.  
 
-2. VLSI System Design (VSD) – *BabySoC modules & simulation framework*  
+### Purpose  
+- Verify design correctness at an early stage.  
+- Detect functional or communication issues quickly.  
+- Observe signals such as clock, reset, and data movement through waveforms.  
 
-3. Docs:  
-   - 📘 [Icarus Verilog](http://iverilog.icarus.com)  
-   - 📘 [GTKWave](http://gtkwave.sourceforge.net)  
+### Tools  
+- **Icarus Verilog (iverilog):** compiles and simulates Verilog.  
+- **GTKWave:** visualizes simulation results (`.vcd` files).  
 
+### Workflow Example  
+1. Compile BabySoC modules using `iverilog`.  
+2. Run simulation and produce `.vcd` file.  
+3. Open the file in `gtkwave` to examine signal activity.  
+
+---
+
+## 5. Key Takeaways  
+
+- An SoC integrates CPU, memory, peripherals, buses, and clock/reset into one chip.  
+- BabySoC offers a simplified but realistic platform to study SoC-level interactions.  
+- Functional modelling acts as a **bridge between theory and RTL design**, ensuring correctness before implementation.  
+- Open-source EDA tools like **iverilog** and **gtkwave** provide effective early validation.  
+
+---
+
+## 6. Deliverable  
+
+A markdown document containing:  
+- Explanation of SoC fundamentals  
+- Components of SoC  
+- Why BabySoC is used as a teaching model  
+- Role of functional modelling before RTL and physical design  
+
+---
+
+## 7. References  
+
+1. Hemanth Kumar D M, *SFAL-VSD SoC Journey – Fundamentals of SoC Design*  
+   [GitHub Link](https://github.com/hemanthkumardm/SFAL-VSD-SoC-Journey/tree/main/11.%20Fundamentals%20of%20SoC%20Design)  
+
+2. VLSI System Design (VSD) Initiative – *BabySoC Modules and Simulation Framework*  
+
+3. Documentation:  
+   - [Icarus Verilog](http://iverilog.icarus.com)  
+   - [GTKWave](http://gtkwave.sourceforge.net)  
