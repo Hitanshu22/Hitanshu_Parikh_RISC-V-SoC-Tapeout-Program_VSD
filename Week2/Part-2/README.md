@@ -7,8 +7,8 @@
 1. [Reset Behavior](#1-reset-behavior)
 2. [Clock Operation](#2-clock-operation)
 3. [Dataflow Between Modules](#3-dataflow-between-modules)
-4. [Simulation Workflow & Logs](#4-simulation-workflow--logs)
-5. [Observations and Conclusion](#5-observations-and-conclusion)
+4. [Simulation Workflow & Logs](#4-simulation-workflow-&-logs)
+5. [Observations and Conclusion](#5-observation-and-conclusion)
 
 ---
 
