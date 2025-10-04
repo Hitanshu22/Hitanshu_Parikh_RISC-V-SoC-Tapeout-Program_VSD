@@ -1,89 +1,83 @@
 # Week 2 – BabySoC Fundamentals & Functional Modelling  
-## Part 2: Practical Functional Modelling
+## Part 2: Hands-on Functional Modelling  
 
 ---
 
 ## Table of Contents
-1. [Reset Verification](#1-reset-verification)  
-2. [Clock Operation](#2-clock-operation)  
-3. [Inter-Module Data Movement](#3-inter-module-data-movement)  
-4. [Simulation Process and Logs](#4-simulation-process-and-logs)  
-5. [Final Remarks](#5-final-remarks)  
+1. [Reset Behavior](#1-reset-behavior)
+2. [Clock Operation](#2-clock-operation)
+3. [Dataflow Between Modules](#3-dataflow-between-modules)
+4. [Simulation Workflow & Logs](#4-simulation-workflow--logs)
+5. [Observations and Conclusion](#5-observations-and-conclusion)
 
 ---
 
-## 1. Reset Verification
+## 1. Reset Behavior
 
-### Probed Signals
-reset, clk, cpu_out, cpu_to_mem, mem_out, mem_to_cpu, mem_to_periph, periph_out, periph_to_cpu
+**Signals Monitored**
 
-yaml
-Copy code
+| Signal Name      | Description |
+|-----------------|-------------|
+| reset           | Reset input signal |
+| clk             | System clock |
+| cpu_to_mem      | Data from CPU to Memory |
+| mem_to_cpu      | Data returned from Memory to CPU |
+| mem_to_periph   | Data sent from Memory to Peripheral |
+| periph_to_cpu   | Data returned from Peripheral to CPU |
 
-### GTKWave Output  
-<img width="1204" height="771" alt="reset_verification" src="https://github.com/user-attachments/assets/9caca34b-14bf-4f93-af44-065d6c6cad09" />
+**Waveform Snapshot**  
 
-### Notes  
-When the reset line is asserted (`reset = 1`), every module drives its output to `0` while the clock keeps toggling. This validates the reset logic for CPU, Memory, and Peripheral subsystems.
+![Reset Operation](https://github.com/user-attachments/assets/9caca34b-14bf-4f93-af44-065d6c6cad09)
+
+**Observation:**  
+When `reset` is active, all modules initialize their outputs properly while the clock continues to toggle. This confirms correct reset behavior across CPU, Memory, and Peripheral modules.
 
 ---
 
 ## 2. Clock Operation
 
-### Probed Signals
-clk, cpu_out, cpu_to_mem
+**Signals Monitored**
 
-yaml
-Copy code
+| Signal Name   | Description |
+|---------------|-------------|
+| clk           | System clock |
+| cpu_to_mem    | Data from CPU to Memory |
+| mem_to_cpu    | Data returned from Memory to CPU |
 
-### GTKWave Output  
-<img width="1204" height="771" alt="clock_operation" src="https://github.com/user-attachments/assets/744533f4-23d7-4e8d-a4b8-6c4c03dd518e" />
+**Waveform Snapshot**  
 
-### Notes  
-The clock oscillates at a stable rate. The CPU output (`cpu_out`) increments synchronously on each rising edge, indicating correct sequential behavior tied to the clock.
+![Clock Signal](https://github.com/user-attachments/assets/744533f4-23d7-4e8d-a4b8-6c4c03dd518e)
 
----
-
-## 3. Inter-Module Data Movement
-
-### Probed Signals
-cpu_to_mem, mem_out, mem_to_cpu, mem_to_periph, periph_out, periph_to_cpu
-
-perl
-Copy code
-
-### GTKWave Output  
-<img width="1204" height="771" alt="data_movement" src="https://github.com/user-attachments/assets/10c8731d-0613-4a9b-a690-5ee3081a92b0" />
-
-### Notes  
-- CPU transmits values towards Memory (`cpu_to_mem`).  
-- Memory increments the received value by 1 and forwards (`mem_out`, `mem_to_cpu`).  
-- Peripheral receives from Memory, adds 2, and sends results (`periph_out`, `periph_to_cpu`).  
-
-This verifies correct sequential propagation of information across all components.
+**Observation:**  
+The clock toggles steadily. Data transfer between CPU and Memory occurs synchronously with the clock, verifying proper sequential operation.
 
 ---
 
-## 4. Simulation Process and Logs
+## 3. Dataflow Between Modules
 
-### Commands Executed
+**Signals Monitored**
+
+| Signal Name     | Description |
+|-----------------|-------------|
+| cpu_to_mem      | CPU → Memory |
+| mem_to_cpu      | Memory → CPU |
+| mem_to_periph   | Memory → Peripheral |
+| periph_to_cpu   | Peripheral → CPU |
+
+**Waveform Snapshot**  
+
+![Dataflow](https://github.com/user-attachments/assets/10c8731d-0613-4a9b-a690-5ee3081a92b0)
+
+**Observation:**  
+- CPU sends data to Memory (`cpu_to_mem`).  
+- Memory processes the data and returns it to CPU (`mem_to_cpu`).  
+- Memory also sends data to Peripheral (`mem_to_periph`), which returns processed data to CPU (`periph_to_cpu`).  
+- This confirms correct propagation and interaction between the functional modules.
+
+---
+
+## 4. Simulation Workflow & Logs
+
+**Compilation Command**  
 ```bash
-# Compile BabySoC modules
 iverilog -o baby_soc_tb.vvp baby_soc_tb.v cpu.v memory.v peripheral.v baby_soc.v
-bash
-Copy code
-# Run simulation
-vvp baby_soc_tb.vvp
-Simulation Output
-Trace file generated: baby_soc.vcd
-
-## 5. Final Remarks
-Observations
-Reset ensures all subsystems initialize safely with zeroed outputs.
-
-Clock synchronizes operations, driving predictable increments in CPU behavior.
-
-Data traverses the CPU → Memory → Peripheral path accurately, demonstrating functional correctness.
-
-## Conclusion
-This modelling activity provides strong evidence of reliable BabySoC operation. Reset, clock synchronization, and dataflow are verified through waveform analysis, highlighting fundamental SoC design concepts. The exercise reinforces confidence in reading simulation traces and builds the foundation for further RTL design and verification tasks.
