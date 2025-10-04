@@ -159,20 +159,25 @@ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
   - Create waveforms for DAC.
   - Loop indefinitely.
 
-#### Instructions
-  - ADDI r9, r0, 1: Sets r9 = 1 (step size).
-  - ADDI r10, r0, 43: Sets r10 = 43 (loop limit).
-  - ADDI r11, r0, 0: Sets r11 = 0 (counter).
-  - ADDI r17, r0, 0: Sets r17 = 0 (DAC input).
-  - ADD r17, r17, r11: Adds r11 to r17.
-  - ADDI r11, r11, 1: Increments r11.
-  - BNE r11, r10, -4: Loops until r11 = 43.
-  - ADD r17, r17, r11: Adds r11 to r17.
-  - SUB r17, r17, r11: Subtracts r11 from r17.
-  - SUB r11, r11, r9: Decrements r11 by r9.
-  - BNE r11, r9, -4: Loops until r11 = 1.
-  - SUB r17, r17, r11: Adjusts r17.
-  - BEQ r0, r0, ...: Stays in loop.
+### BabySoC CPU Instruction Sequence
+
+The BabySoC executes a simple loop-based program that drives the DAC (`r17`). The sequence is as follows:
+
+| Instruction            | Operation Description                                         |
+|-------------------------|---------------------------------------------------------------|
+| `ADDI r9, r0, 1`       | Initialize **step size** → `r9 = 1`                            |
+| `ADDI r10, r0, 43`     | Set **loop limit** → `r10 = 43`                               |
+| `ADDI r11, r0, 0`      | Initialize **counter** → `r11 = 0`                            |
+| `ADDI r17, r0, 0`      | Initialize **DAC input** → `r17 = 0`                          |
+| `ADD r17, r17, r11`    | Accumulate counter value into DAC register                    |
+| `ADDI r11, r11, 1`     | Increment counter (`r11 = r11 + 1`)                           |
+| `BNE r11, r10, -4`     | Loop until counter reaches loop limit (`r11 = 43`)            |
+| `ADD r17, r17, r11`    | Add counter again to DAC register                             |
+| `SUB r17, r17, r11`    | Subtract counter from DAC register                            |
+| `SUB r11, r11, r9`     | Decrement counter (`r11 = r11 - 1`)                           |
+| `BNE r11, r9, -4`      | Loop until counter reduces to step size (`r11 = 1`)           |
+| `SUB r17, r17, r11`    | Adjust DAC register with final subtraction                    |
+| `BEQ r0, r0, ...`      | Infinite loop (halts program by continuously branching)        |
 
 #### Program Phases
   - Ramp Up: r11 = 0 to 42, r17 sums to 903, steady increase.
