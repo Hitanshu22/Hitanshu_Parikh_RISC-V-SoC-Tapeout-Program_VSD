@@ -30,8 +30,7 @@ In this program, we learn to design a System-on-Chip (SoC) from basic RTL to GDS
 | ---------- | ----------- | ------ |
 | [**Task 1**](Week2/README.md#-fundamentals-of-system-on-chip-soc-design) |  Write-up on SoC fundamentals | ✅ Done |
 | [**Task 2**](Week2/README.md#-vsdbabysoc--a-tiny-but-powerful-risc-v-soc) |  VSDBabySoC  | ✅ Done |
-| [**Task 3**](Week2/README.md#-the-instruction-program-driving-babysoc) |  Understanding of  RVMYTH core  | ✅ Done |
-| [**Task 4**](Week2/README.md#-pre_synth_sim-waveform) | Pre synthesis Waveform  & explanations | ✅ Done |
+| [**Task 3**](Week2/README.md#-pre_synth_sim-waveform) | Pre synthesis Waveform  & explanations | ✅ Done |
 
 ---
 
