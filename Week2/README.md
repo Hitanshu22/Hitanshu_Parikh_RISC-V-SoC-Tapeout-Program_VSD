@@ -7,8 +7,8 @@ This repository hosts all notes, experiments, and outcomes for **Week 2** of the
 ## Index  
 
 1. [Introduction](#1-introduction)  
-2. [Part-1: Theory & Concepts](#2-section-a-theory--concepts)  
-3. [Part-2: Practical Simulation](#3-section-b-practical-simulation)  
+2. [Part-1: Theory & Concepts](#2-Part-1-theory--concepts)  
+3. [Part-2: Practical Simulation](#3-Part-2-practical-simulation)  
 4. [Resources](#4-resources)  
 
 ---
