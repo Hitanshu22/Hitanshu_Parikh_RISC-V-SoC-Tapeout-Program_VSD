@@ -24,6 +24,24 @@ In this program, we learn to design a System-on-Chip (SoC) from basic RTL to GDS
 - Learned about **basic environment setup** for RTL design and synthesis.  
 - Prepared the system for upcoming **RTL → GDSII flow task**.
 
+## 📅 Week 2 — Fundamentals of SoC Design
+
+| Task       | Description | Status |
+| ---------- | ----------- | ------ |
+| [**Task 1**](Week2/README.md#-fundamentals-of-system-on-chip-soc-design) |  Write-up on SoC fundamentals | ✅ Done |
+| [**Task 2**](Week2/README.md#-vsdbabysoc--a-tiny-but-powerful-risc-v-soc) |  VSDBabySoC  | ✅ Done |
+| [**Task 3**](Week2/README.md#-the-instruction-program-driving-babysoc) |  Understanding of  RVMYTH core  | ✅ Done |
+| [**Task 4**](Week2/README.md#-pre_synth_sim-waveform) | Pre synthesis Waveform  & explanations | ✅ Done |
+
+---
+
+###  Key Learnings from Week 2  
+
+* Gained conceptual understanding of **SoC fundamentals** (CPU, memory, interconnect, peripherals).  
+* Learned how **BabySoC** simplifies SoC design concepts and verified its behavior using simulation + GTKWave.
+* [Future Work:](Week2/README.md#-future-work) Add memory for instruction fetch and enable C programs to be compiled into hex for execution on BabySoC.  
+
+
 
 
 
