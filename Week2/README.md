@@ -41,7 +41,7 @@ The work is organized into **two major sections**: theory + lab exercises.
 
 **Outcome:** A markdown document with summarized theory, illustrations, and explanations.  
 
-📂 [Go to Theory Notes](./Part-1/Deliverables.md)  
+📂 [Go to Theory Notes](./Part-1/deliverables.md)  
 
 ---
 
