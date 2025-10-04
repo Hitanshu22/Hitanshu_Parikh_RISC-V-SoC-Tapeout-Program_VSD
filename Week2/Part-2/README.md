@@ -81,7 +81,7 @@ The clock toggles steadily. Data transfer between CPU and Memory occurs synchron
 **Compilation Command**  
 ```bash
 iverilog -o baby_soc_tb.vvp baby_soc_tb.v cpu.v memory.v peripheral.v baby_soc.v
-
+```
 ### Output: -
 **Uploaded as** ***[baby_soc.vcd](baby_soc.vcd)***
 
