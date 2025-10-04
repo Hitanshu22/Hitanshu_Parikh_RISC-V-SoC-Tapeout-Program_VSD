@@ -28,7 +28,7 @@ The work is organized into **two major sections**: theory + lab exercises.
 
 ---
 
-## 2. Section A: Theory & Concepts  
+## 2. Part-1: Theory & Concepts  
 
 **Aim:** Develop conceptual clarity on SoC design with BabySoC.  
 
@@ -45,7 +45,7 @@ The work is organized into **two major sections**: theory + lab exercises.
 
 ---
 
-## 3. Section B: Practical Simulation  
+## 3. Part-2: Practical Simulation  
 
 **Aim:** Run BabySoC simulations and analyze functional behavior.  
 
