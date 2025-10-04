@@ -90,7 +90,7 @@ vvp baby_soc_tb.vvp
 ### Output: -
 **Uploaded as** ***[baby_soc.vcd](baby_soc.vcd)***
 
-## 5. Conclusion and Observation
+## 5. Observation and Conclusion
 
 **Observation: -**  
 The BabySoC functional modelling correctly demonstrates the expected behavior of all modules. During reset, all outputs initialize to zero while the clock continues toggling. CPU, Memory, and Peripheral data propagate correctly, showing proper communication between modules. Waveform analysis confirms synchronous operation and accurate dataflow.  
