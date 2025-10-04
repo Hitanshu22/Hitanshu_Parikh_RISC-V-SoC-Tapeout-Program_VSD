@@ -1,4 +1,4 @@
-# Week 2 – Fundamentals of BabySoC & Functional Modelling  
+![Week2-1](https://github.com/user-attachments/assets/92b17ae6-7f95-4b9e-95b4-3e0b9291bf05)![Week2-3](https://github.com/user-attachments/assets/3c475515-4a15-4e08-b9a8-abc604a03b1c)![Week2-2](https://github.com/user-attachments/assets/10b6c0af-58f8-4774-a120-da3da0e43f70)# Week 2 – Fundamentals of BabySoC & Functional Modelling  
 
 ## Overview
 The semiconductor industry continually strives for higher integration, efficiency, and performance. A **System-on-Chip (SoC)** embodies this evolution by combining multiple essential computing components into a single integrated circuit (IC).  
@@ -143,9 +143,9 @@ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 ```
 
 #### Output Waveform
-![Week2 Image 1](Images/week2_1.jpg)
-![Week2 Image 2](Images/week2_2.jpg)
-![Week2 Image 3](Images/week2_3.jpg)
+![Week2-1](https://github.com/user-attachments/assets/596c6623-3ed5-4b40-924a-e1b306bd90b8)
+![Week2-2](https://github.com/user-attachments/assets/947ac378-25dc-4404-b966-37aad113d606)
+![Week2-3](https://github.com/user-attachments/assets/ab33c02f-0b1e-4984-93fc-bff44b7a64ee)
 
 ### 🧠 How the CPU Works
 
