@@ -118,6 +118,3 @@ A markdown document containing:
 
 2. VLSI System Design (VSD) Initiative – *BabySoC Modules and Simulation Framework*  
 
-3. Documentation:  
-   - [Icarus Verilog](http://iverilog.icarus.com)  
-   - [GTKWave](http://gtkwave.sourceforge.net)  
