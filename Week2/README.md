@@ -1,102 +1,98 @@
-# Week 2 – BabySoC Fundamentals & Functional Modelling  
+# Week 2 – Fundamentals of BabySoC & Functional Modelling  
 
-## Introduction  
-The semiconductor industry has been steadily moving towards higher integration, performance, and efficiency. A **System-on-Chip (SoC)** is one of the key milestones in this evolution, bringing together multiple components of a computing system into a single integrated circuit (IC).  
+## Overview
+The semiconductor industry continually strives for higher integration, efficiency, and performance. A **System-on-Chip (SoC)** embodies this evolution by combining multiple essential computing components into a single integrated circuit (IC).  
 
-Instead of relying on several discrete chips connected via a PCB, SoCs integrate the CPU, memory, peripherals, and interconnects in one place. This reduces the cost, size, and power requirements while improving overall performance. From smartphones to IoT devices and even advanced computing platforms, SoCs are now the backbone of modern digital systems.  
+Unlike traditional designs that rely on multiple discrete chips interconnected via a PCB, an SoC integrates the **CPU, memory, peripherals, and interconnects** on a single chip. This reduces size, power consumption, and cost while improving performance. SoCs power modern devices ranging from smartphones and IoT gadgets to advanced computing platforms.  
 
-In this write-up, I will summarize the fundamentals of SoC design, explain its major building blocks, highlight the educational importance of the **BabySoC** model, and discuss the critical role of **functional modelling** in the SoC design flow.  
-
----
-
-## What is a System-on-Chip (SoC)?  
-A **System-on-Chip** is an IC that integrates all the essential modules of a computer system into one chip.  
-
-**Key advantages of SoCs include:**  
-- **Compactness**: Saves board space by replacing multiple discrete ICs.  
-- **Performance**: On-chip data transfer is faster than PCB interconnects.  
-- **Power efficiency**: Optimized integration consumes less energy.  
-- **Cost-effectiveness**: Fewer components reduce manufacturing and packaging costs.  
-- **Scalability**: Same base architecture can be scaled for different applications.  
-
-SoCs are especially important in **resource-constrained environments** like mobile phones and embedded devices where every milliwatt and millimeter counts.  
+This document introduces SoC fundamentals, the educational **BabySoC** model, and the significance of **functional modelling** in the SoC design process.  
 
 ---
 
-## Components of a Typical SoC  
+## Understanding a System-on-Chip (SoC)  
+A **System-on-Chip** consolidates all critical computing modules into a single silicon die.  
 
-### 1. CPU (Central Processing Unit)  
-- Acts as the "brain" of the SoC.  
-- Responsible for instruction execution, decision making, and system control.  
-- May be a general-purpose processor (ARM, RISC-V) or an application-specific processor (DSP, custom accelerator).  
+### Advantages of SoCs
+- **Compact design**: Reduces board space by replacing multiple ICs.  
+- **High performance**: On-chip communication is faster than off-chip interconnects.  
+- **Energy efficiency**: Optimized integration minimizes power consumption.  
+- **Cost-effective**: Fewer components translate to lower manufacturing costs.  
+- **Flexible scaling**: Base architectures can be adapted for diverse applications.  
 
-### 2. Memory  
-- **Volatile memory (SRAM, DRAM):** Temporary data and program storage.  
-- **Non-volatile memory (Flash, ROM):** Permanent storage for firmware and configurations.  
-- Provides both **instruction memory** (for program code) and **data memory** (for working storage).  
+SoCs are particularly crucial in **resource-constrained environments** such as embedded systems and mobile devices.  
 
-### 3. Peripherals  
-- Enable the SoC to interact with the outside world.  
-- Examples:  
+---
+
+## Key Components of a Typical SoC  
+
+### 1. Central Processing Unit (CPU)
+- Functions as the **brain** of the SoC.  
+- Executes instructions, controls system flow, and performs computations.  
+- Can be general-purpose (ARM, RISC-V) or specialized (DSP, custom accelerators).  
+
+### 2. Memory
+- **Volatile (SRAM, DRAM)**: Temporary storage for program execution and data.  
+- **Non-volatile (Flash, ROM)**: Permanent storage for firmware and configurations.  
+- Supports **instruction memory** for programs and **data memory** for runtime operations.  
+
+### 3. Peripherals
+- Facilitate interaction between the SoC and external environment.  
+- Typical peripherals include:  
   - **GPIO (General Purpose Input/Output)**  
-  - **Communication protocols:** UART, I2C, SPI  
-  - **Timers and Counters**  
-  - **Interrupt Controllers**  
-- These peripherals make the SoC versatile and suitable for diverse applications.  
+  - **Communication interfaces**: UART, I2C, SPI  
+  - **Timers and counters**  
+  - **Interrupt controllers**  
 
-### 4. Interconnect (Bus/Fabric)  
-- Provides the communication backbone between CPU, memory, and peripherals.  
-- Must support high bandwidth and low latency.  
-- Common bus standards: **AMBA (AXI, AHB, APB)**.  
-- Acts like the “nervous system” of the chip.  
+### 4. Interconnect (Bus/Fabric)
+- Acts as the **communication backbone** between CPU, memory, and peripherals.  
+- Needs to handle high bandwidth with minimal latency.  
+- Examples include **AMBA buses** (AXI, AHB, APB).  
 
 ---
 
-## Why BabySoC?  
-The **BabySoC** is a simplified, educational model designed to help students and beginners learn SoC design without being overwhelmed by real-world complexity.  
+## Why Learn with BabySoC?
+The **BabySoC** is an educational, simplified SoC designed to help students grasp core concepts without the complexity of full-scale industrial SoCs.  
 
-**Key features of BabySoC:**  
-- A minimal **CPU core** with basic instruction execution.  
-- Small, easy-to-understand **memory modules**.  
-- A **reduced set of peripherals**, only the essentials.  
-- A **lightweight interconnect** that avoids complicated protocols.  
+**Highlights of BabySoC:**
+- Minimalistic CPU core for basic instruction execution.  
+- Compact memory modules for easier understanding.  
+- A limited set of peripherals, focusing on essentials.  
+- Lightweight interconnect for simplified signal flow.  
 
-By reducing the complexity, BabySoC allows learners to:  
-- Focus on **core SoC concepts** rather than implementation overhead.  
-- Understand how each block communicates.  
-- Trace signals using simulation and visualization tools.  
-- Gain confidence before tackling full-scale RTL and physical design challenges.  
-
-Thus, BabySoC acts as the **stepping stone** for a deeper journey into VLSI and SoC design.  
+**Benefits for learners:**
+- Grasp **fundamental SoC architecture** without distraction.  
+- Trace and analyze signals through simulation tools.  
+- Understand inter-module communication and control.  
+- Gain confidence before tackling complex RTL or physical designs.  
 
 ---
 
-## Role of Functional Modelling in SoC Design  
-The SoC design flow typically progresses through several stages:  
+## Functional Modelling in SoC Design
+SoC development follows several stages:  
 
-1. **Specification** – Defining what the SoC should do.  
-2. **Functional Modelling** – Abstract-level representation and verification.  
-3. **RTL Design** – Writing Verilog/VHDL for cycle-accurate design.  
-4. **Synthesis and Physical Design** – Converting RTL to gate-level netlists and layouts.  
-5. **Fabrication & Testing** – Manufacturing and post-silicon validation.  
+1. **Specification** – Define the desired functionality.  
+2. **Functional Modelling** – Abstract-level simulation and verification.  
+3. **RTL Design** – Cycle-accurate hardware description in Verilog/VHDL.  
+4. **Synthesis & Physical Design** – Convert RTL into gate-level netlists and layouts.  
+5. **Fabrication & Post-Silicon Testing** – Manufacture and validate the chip.  
 
-### Why Functional Modelling Matters:  
-- **Early validation**: Helps test whether the architecture works as intended before investing time in RTL.  
-- **Exploration**: Designers can evaluate memory sizes, bus widths, and instruction flows.  
-- **Debugging**: Issues are easier to identify at this abstraction level.  
-- **Time & cost savings**: Prevents late-stage design rework.  
+### Importance of Functional Modelling
+- **Early validation**: Test architecture feasibility before RTL.  
+- **Design exploration**: Adjust memory sizes, bus widths, and instruction flows.  
+- **Simplified debugging**: Easier identification of logic issues at high-level.  
+- **Resource efficiency**: Reduces design rework, saving time and cost.  
 
-**Tools commonly used:**  
-- **Icarus Verilog** – Open-source Verilog simulation tool.  
-- **GTKWave** – Waveform viewer to visualize signal activity over time.  
+**Common tools for simulation:**
+- **Icarus Verilog** – Open-source Verilog simulator.  
+- **GTKWave** – Signal waveform viewer for visual analysis.  
 
-These tools allow students to observe CPU–memory interactions, verify control signals, and confirm that the BabySoC behaves as expected at the functional level.  
+Functional modelling allows students to observe CPU-memory-peripheral interactions and verify BabySoC behavior before moving to RTL or synthesis.  
 
 ---
 
-## 🛠 Getting Started
+## 🛠 Setting Up BabySoC
 
-📥 Clone the Project
+### Clone the Project
 ```bash
 cd ~/VLSI
 git clone https://github.com/manili/VSDBabySoC.git
