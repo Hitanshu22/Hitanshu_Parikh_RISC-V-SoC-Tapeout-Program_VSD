@@ -27,7 +27,8 @@
 
 **Waveform Snapshot**  
 
-![Reset Operation](https://github.com/user-attachments/assets/9caca34b-14bf-4f93-af44-065d6c6cad09)
+![reset_operation](https://github.com/user-attachments/assets/09a84ea7-af5c-4e05-b112-d0d6934f48a1)
+
 
 **Observation:**  
 When `reset` is active, all modules initialize their outputs properly while the clock continues to toggle. This confirms correct reset behavior across CPU, Memory, and Peripheral modules.
@@ -46,7 +47,8 @@ When `reset` is active, all modules initialize their outputs properly while the 
 
 **Waveform Snapshot**  
 
-![Clock Signal](https://github.com/user-attachments/assets/744533f4-23d7-4e8d-a4b8-6c4c03dd518e)
+![clock-signal](https://github.com/user-attachments/assets/4c8cc0a8-92f8-481e-96d0-eab0668caf43)
+
 
 **Observation:**  
 The clock toggles steadily. Data transfer between CPU and Memory occurs synchronously with the clock, verifying proper sequential operation.
@@ -66,7 +68,8 @@ The clock toggles steadily. Data transfer between CPU and Memory occurs synchron
 
 **Waveform Snapshot**  
 
-![Dataflow](https://github.com/user-attachments/assets/10c8731d-0613-4a9b-a690-5ee3081a92b0)
+![dataflow](https://github.com/user-attachments/assets/4689c118-46b7-4e85-9b09-613e84db72d1)
+
 
 **Observation:**  
 - CPU sends data to Memory (`cpu_to_mem`).  
